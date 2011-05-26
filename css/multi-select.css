@@ -50,3 +50,13 @@
 .ms-container .ms-selection li:hover{
   background: #eee url('../img/delete.png') no-repeat 3px 3px;
 }
+
+.ms-title{
+    display: block;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-weight: bold;
+    color: #222;
+    padding: 2px 0;
+    background-color: #efefef;
+}
