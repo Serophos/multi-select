@@ -3,6 +3,8 @@
   var msMethods = {
     'init' : function(options){
       this.settings = {
+          'av_title'  : 'Available Elements',
+          'sel_title' : 'Selected Elements'
       };
       if(options) {
         this.settings = $.extend(this.settings, options);
@@ -16,8 +18,8 @@
         var ms = $(this);
         ms.attr('id', ms.attr('id') != undefined ? ms.attr('id') : 'select'+((new Date()).getTime()));
         var container = $('<div id="ms-'+ms.attr('id')+'" class="ms-container"></div>').detach(),
-            selectableContainer = $('<div class="ms-selectable"></div>').detach(),
-            selectedContainer = $('<div class="ms-selection"></div>').detach(),
+            selectableContainer = $('<div class="ms-selectable"><span class="ms-title">' + multiSelects.settings.av_title + '<span></div>').detach(),
+            selectedContainer = $('<div class="ms-selection"><span class="ms-title">' + multiSelects.settings.sel_title + '</span></div>').detach(),
             selectableUl = $('<ul></ul>').detach(),
             selectedUl = $('<ul></ul>').detach();
 
@@ -112,7 +114,7 @@
     } else if ( typeof method === 'object' || ! method ) {
       return msMethods.init.apply( this, arguments );
     } else {
-      if(console.log) console.log( 'Method ' +  method + ' does not exist on jquery.multiSelect' );
+      if(console.log) console.log( 'Method ' + method + ' does not exist on jquery.multiSelect' );
     }
     return false;
   };
